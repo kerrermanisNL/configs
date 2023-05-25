@@ -1,0 +1,4 @@
+Make sure to sync settings between IDEs. You can do this by following steps here:
+https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
+
+Or: Enable setting sync on original IDE (push settings) -> on new IDE enable settins sync (get settings)
