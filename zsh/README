@@ -1,0 +1,9 @@
+For agnoster install the powerline fonts:
+```
+sudo apt-get install fonts-powerline
+```
+
+Then clear the cache for the changes to take effect:
+```
+sudo fc-cache -f -v
+```
