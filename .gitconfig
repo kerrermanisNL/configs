@@ -1,0 +1,21 @@
+[user]
+	signingkey = 67AB25274175689D
+	name = Bono de Visser
+	email = github@fishbone.mozmail.com
+[commit]
+	gpgsign = true
+[alias]
+	diffc = diff --cached
+	diffl = diff HEAD~1
+	poh = push origin HEAD
+	plog = log --pretty=oneline
+	nope = reset --hard HEAD~1
+	mnee = reset --soft HEAD~1
+	prull = !git checkout main && git pull origin main && git fetch --prune && git branch -d $(git branch --merged) | grep -w "Deleted"
+	recent = !git reflog | egrep -io '"moving from ([^[:space:]]+)"' | awk '{ print $3 }' | awk ' !x[$0]++' | egrep -v '^[a-f0-9]{40}$' | head -n10
+[core]
+	editor = vim
+[pager]
+	branch = false
+[diff]
+	noprefix = true
