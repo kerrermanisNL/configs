@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/bono/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -23,14 +23,13 @@ ZSH_THEME="agnoster"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -45,8 +44,9 @@ ZSH_THEME="agnoster"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -110,7 +110,7 @@ export NODE_OPTIONS=--max_old_space_size=4096
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source /home/bono/.local/bin/virtualenvwrapper.sh
+#source /home/bono/.local/bin/virtualenvwrapper.sh
 
 # MAKE CAPS CTRL
 /usr/bin/setxkbmap -option "ctrl:nocaps"
@@ -129,6 +129,7 @@ alias prull=~/prull.sh
 alias prod='docker run --rm -it --net=host -e DATABASE_WRITE_HOST=localhost -e DATABASE_PORT=25433 -e DATABASE_USER=supply -e DATABASE_PASS=$WHATEVER --entrypoint /bin/bash 312805905296.dkr.ecr.eu-west-1.amazonaws.com/service-supply:main'
 alias prod-write='docker run --rm -it --net=host -e DATABASE_WRITE_HOST=localhost -e DATABASE_PORT=25432 -e DATABASE_USER=supply -e DATABASE_PASS=$WHATEVER --entrypoint /bin/bash 312805905296.dkr.ecr.eu-west-1.amazonaws.com/service-supply:main'
 alias pom='/home/bono/Downloads/Pomerium-*'
+alias ll='ls -lah'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -144,4 +145,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
